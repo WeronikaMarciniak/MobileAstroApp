@@ -10,8 +10,10 @@
         android:id="@+id/textClock"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:textStyle="bold"
+        android:background="#B8B8B8"
+        android:fontFamily="serif"
+        android:textSize="20sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,12 +40,22 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textClock" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentViews1"
+        android:name="com.example.astrocalculator.MoonFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentViews" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/teal_700"
+        android:background="#B8B8B8"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"

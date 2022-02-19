@@ -12,6 +12,8 @@ import androidx.preference.PreferenceManager;
 import androidx.viewpager2.widget.ViewPager2;
 import com.astrocalculator.AstroCalculator;
 import com.astrocalculator.AstroDateTime;
+import com.example.astrocalculator.weather.WeatherLocation;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     ViewPagerAdapter viewPagerAdapter;
     Fragment sunFragment;
     Fragment moonFragment;
+    Fragment weatherFragment;
+    Fragment forecastFragment;
 
     AstroCalculator.Location location;
     AstroCalculator astroCalculator;
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     float longitude;
     float latitude;
     float refreshTime;
+    WeatherLocation weatherLocation =null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,16 +61,22 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), getLifecycle());
             viewPagerAdapter.addFragment(moonFragment = new MoonFragment());
             viewPagerAdapter.addFragment(sunFragment = new SunFragment());
+            viewPagerAdapter.addFragment(weatherFragment = new WeatherFragment());
+            viewPagerAdapter.addFragment(forecastFragment = new ForecastFragment());
             viewPager.setAdapter(viewPagerAdapter);
         } else {
 
             sunFragment = new SunFragment();
             moonFragment = new MoonFragment();
+            weatherFragment = new WeatherFragment();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment, sunFragment)
                     .commit();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragmentViews, moonFragment)
+                    .commit();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragmentViews1, weatherFragment)
                     .commit();
         }
 
@@ -101,16 +112,22 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), getLifecycle());
             viewPagerAdapter.addFragment(moonFragment = new MoonFragment());
             viewPagerAdapter.addFragment(sunFragment = new SunFragment());
+            viewPagerAdapter.addFragment(weatherFragment = new WeatherFragment());
+            viewPagerAdapter.addFragment(forecastFragment = new ForecastFragment());
             viewPager.setAdapter(viewPagerAdapter);
         } else {
 
             sunFragment = new SunFragment();
             moonFragment = new MoonFragment();
+            weatherFragment = new WeatherFragment();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment, sunFragment)
                     .commit();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragmentViews, moonFragment)
+                    .commit();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragmentViews1, weatherFragment)
                     .commit();
         }
         updateAstroData();

@@ -7,10 +7,13 @@
         <entry key="app/src/main/res/layout-sw600dp-land/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_forecast.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_moon.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_sun.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_weather.xml" value="0.2630597014925373" />
         <entry key="app/src/main/res/layout/settings_activity.xml" value="0.129981884057971" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.33" />
+        <entry key="app/src/main/res/xml/root_preferences.xml" value="0.22" />
       </map>
     </option>
   </component>

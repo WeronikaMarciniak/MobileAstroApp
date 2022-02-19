@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.example.astroweather_v2"
+        applicationId 'com.example.astrocalculator'
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
